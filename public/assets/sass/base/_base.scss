@@ -1,0 +1,42 @@
+/* BASE */
+/*
+- GENERAL
+- BODY
+- ACCESSIBILITY
+*/
+
+
+// GENERAL
+
+* { box-sizing: border-box }
+
+  
+// BODY
+  
+.body {
+  background: $theme-light-gray;
+  font-family: $fira;
+  margin: 0;
+  padding: 0;
+  &__wrapper {
+    display: grid;
+    grid-template-areas: 
+      "header"
+      "main"
+      "footer";
+    min-height: 100vh;
+    @include breakpoint($tablet){
+      grid-template-columns: 4rem auto;
+      grid-template-areas: 
+        "header main"
+        "header footer";
+    }
+  }
+}
+
+
+// ACCESSIBILITY
+
+.accessible-hidden {
+  @include accessible-hidden;
+}

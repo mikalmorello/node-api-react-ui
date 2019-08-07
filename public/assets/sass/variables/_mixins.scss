@@ -1,0 +1,48 @@
+/* MIXINS */
+/*
+- CLEAR
+- REMOVE BUTTON STYLES
+- ACCESSIBLE HIDDEN TEXT
+*/
+
+// CLEAR
+@mixin clearFix(){
+  &:before,
+  &:after{
+    content: " "; 
+    display: table; 
+  }
+
+  &:after{
+    display: block;
+    clear: both;
+    height: 1px;
+    margin-top: -1px;
+    visibility: hidden;
+  }
+  &{
+    *zoom: 1;
+  }
+}
+
+
+// REMOVE BUTTON STYLES 
+
+@mixin buttonClear(){
+  background: none;
+  border: 0;
+  padding: 0;
+}
+
+
+// ACCESSIBLE HIDDEN TEXT
+
+@mixin accessible-hidden(){
+  position:absolute;
+  left:-10000px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
+

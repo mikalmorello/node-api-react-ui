@@ -1,0 +1,37 @@
+/* HEADER REGION */
+/*
+- HEADER
+- HEADER STATES
+*/
+
+
+// HEADER
+
+.header { 
+  background: $theme-blue;
+  grid-area: header;
+  z-index: $z-index-header;
+  @include breakpoint($tablet){
+    max-width: 4rem;
+    min-width: 4rem;
+  }
+  &__container {
+    padding: .5rem 1.5rem;
+    position: relative;
+    @include breakpoint($tablet){
+      padding: 0;
+    }
+  }
+  &__logo {
+    display: block;
+    @include breakpoint($tablet){
+      left: -1.5625rem;
+      position: absolute;
+      top: 3.125rem;
+      transform: rotate(-90deg); 
+    }
+  }
+  a {
+    color: $white;
+  }
+}
