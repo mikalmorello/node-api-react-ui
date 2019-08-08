@@ -4,40 +4,25 @@ import Header from './components/Header';
 import Main from './components/Main';
 
 class App extends React.Component {
-  constructor(){
-  super();
-  this.state={
-     hits: [],
-     isLoading: false,
-     error: null,
-   }
-}
-
-componentDidMount(){
-  this.setState({
-     isLoading: true
-    })
-  fetch('https://harvard-api.herokuapp.com')
-  .then(response => {
-       if(response.ok){
-       return response.json()
-      }else{
-      throw new Error('Something went wrong...')
+  
+  constructor(props) {
+    super(props)
+    this.state = {
+      data: [],
+      loaded: false,
     }
- })
-  .then(data => this.setState({
-    hits: data.hits,
-    isLoading: false
-  }))
-  .catch(error => this.setState({
-     error: null, 
-     isLoading: false
-  }))
- }
+  } 
+  
+  componentDidMount(){
+    this.setState({loading: true})
+    fetch('https://harvard-api.herokuapp.com') 
+      .then(data => data.json())
+      .then(data => this.setState({data, loaded: true}))
+  }
   
   render(){
-//    console.log(state.courses);
-    console.log(this.state.hits);
+    console.log(this.state.data);
+    console.log('test');
     return (
       <div className="body__wrapper"> 
         <Helmet>
@@ -45,7 +30,7 @@ componentDidMount(){
           <meta name="description" content="Harvard Course API - UI" />
         </Helmet>    
         <Header />
-        <Main  />
+        <Main data={this.state.data} loaded={this.state.loaded}  />
       </div>
     );
   }
