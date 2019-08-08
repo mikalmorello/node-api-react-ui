@@ -1,0 +1,36 @@
+/* COURSE */
+/*
+- COURSE
+*/
+
+
+// COURSE
+
+.course {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3rem;
+  &__field {
+    display: flex; 
+    margin-bottom: .5rem;
+    padding-left: 1rem;
+  }
+  &__title-wrapper {
+    display: flex;
+  }
+  &__title {
+    background: $theme-teal;
+    color: $white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: .5rem 1rem;
+    margin-bottom: 1rem;
+  }
+  &__label {
+    font-weight: bold;
+    width: 6rem; 
+  }
+  &__property {
+    padding-left: 1rem;
+  } 
+}

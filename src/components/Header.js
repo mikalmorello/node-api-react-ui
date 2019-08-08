@@ -23,10 +23,10 @@ class Header extends React.Component {
                 <a className="header__nav-link" href="/">Search</a>
               </li>
               <li className="header__nav-item">
-                <a className="header__nav-link" href="/">Courses</a>
+                <a className="header__nav-link  active" href="/">Courses</a>
               </li>
               <li className="header__nav-item">
-                <a className="header__nav-link active" href="/">Instructors</a>
+                <a className="header__nav-link" href="/">Instructors</a>
               </li>
             </ul>
           </nav>

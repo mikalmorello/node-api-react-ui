@@ -16,9 +16,10 @@
   padding: 6rem 4rem;
   width: 100%;
   &__intro {
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
   }
   &__results {
+    display: flex;
     margin-bottom: 4rem;
   }
   &__title {
@@ -30,4 +31,9 @@
     font-weight: bold;
     text-transform: uppercase;
   } 
+  &__results-container {
+    border-left: 2px solid $theme-light-gray;
+    padding: 0 3rem;
+    margin-left: 3rem;
+  }
 }
